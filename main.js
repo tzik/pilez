@@ -219,8 +219,23 @@ register_history(0x000f, 'i');
 (() => {
   let [level] = $('#level');
   let [goal] = $('#goal');
+
+  let [attempt] = $('#attempt');
+  let [result] = $('#result');
+  let check = () => {
+    if (attempt.code === goal.code) {
+      result.classList.add('pass');
+      result.textContent = '===';
+    } else {
+      result.classList.remove('pass');
+      result.textContent = '!==';
+    }
+  };
+  attempt.hooks.push(check);
+
   level.addEventListener('change', () => {
     goal.code = parseInt(level.value, 16);
     goal.draw();
+    check();
   });
 })();

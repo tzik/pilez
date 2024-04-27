@@ -13,4 +13,15 @@ x-pile {
     width: 256px;
     height: 128px;
     vertical-align: middle;
+    margin: 0.2em;
 }
+
+#result {
+    font-weight: bold;
+    color: red;
+}
+
+#result.pass {
+    color: green;
+}
+
