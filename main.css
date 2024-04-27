@@ -16,6 +16,10 @@ x-pile {
     margin: 0.2em;
 }
 
+.input, .output {
+    cursor: grab;
+}
+
 #result {
     font-weight: bold;
     color: red;
