@@ -1,0 +1,16 @@
+
+:root {
+    font-size: 32pt;
+}
+
+.description {
+    font-size: 16pt;
+}
+
+x-pile {
+    display: inline-block;
+    position: relative;
+    width: 256px;
+    height: 128px;
+    vertical-align: middle;
+}

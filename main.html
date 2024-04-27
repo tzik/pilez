@@ -1,0 +1,47 @@
+<!doctype html>
+<title>pilez - A Pile Puzzle</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="stylesheet" href="main.css">
+<script type="module" src="main.js"></script>
+
+<div id="logo">pilez</div>
+<p class="description">Drag &amp; Drop piles to make the Goal pattern from the Start pattern.</p>
+
+<table>
+  <tr><td>&rarr;</td><td><x-pile class="output" data-code="000f" data-recipe="i"></x-pile></td></tr>
+  <tr id="cut"><td>&#x2704;</td><td><x-pile class="input"></x-pile>&rArr;<x-pile class="output"></x-pile></td></tr>
+  <tr id="rot"><td>&#x27F3;</td><td><x-pile class="input"></x-pile>&rArr;<x-pile class="output"></x-pile></td></tr>
+  <tr id="stack">
+    <td>&#x2263;</td>
+    <td>
+      <x-pile class="input"></x-pile>&amp;<x-pile class="input"></x-pile>&rArr;<x-pile class="output"></x-pile>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      &#x26f3;
+      <select id="level" size="5">
+        <option value="000f" selected>Level 0</option>
+        <option value="0003">Level 1</option>
+        <option value="000c">Level 2</option>
+        <option value="0001">Level 3</option>
+        <option value="00ff">Level 4</option>
+        <option value="137f">Level 5</option>
+        <option value="f731">Level 6</option>
+        <option value="001e">Level 7</option>
+        <option value="0fe1">Level 8</option>
+        <option value="f7e1">Level 9</option>
+      </select>
+    </td>
+    <td><x-pile id="goal" data-code="000f"></x-pile></td>
+  </tr>
+</table>
+
+<!--
+<table>
+  <tr><td>History</td></tr>
+  <tr><td></td></tr>
+</table>
+&#x2606;
+&#x2605;
+-->
