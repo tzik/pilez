@@ -219,6 +219,7 @@ register_history(0x000f, 'i');
 (() => {
   let [level] = $('#level');
   let [goal] = $('#goal');
+  let [next] = $('#next');
 
   let [attempt] = $('#attempt');
   let [result] = $('#result');
@@ -226,16 +227,28 @@ register_history(0x000f, 'i');
     if (attempt.code === goal.code) {
       result.classList.add('pass');
       result.textContent = '===';
+      let opts = level.options;
+      next.disabled = opts.selectedIndex === opts.length - 1;
     } else {
       result.classList.remove('pass');
       result.textContent = '!==';
+      next.disabled = true;
     }
   };
   attempt.hooks.push(check);
 
-  level.addEventListener('change', () => {
+  let level_switch = () => {
     goal.code = parseInt(level.value, 16);
     goal.draw();
     check();
+  };
+  level.addEventListener('change', level_switch);
+
+  next.addEventListener('click', () => {
+    let opts = level.options;
+    if (opts.selectedIndex < opts.length - 1) {
+      opts.selectedIndex += 1;
+      level_switch();
+    }
   });
 })();
